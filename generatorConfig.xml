@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <!-- <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" /> -->
+
+	
+
+  <!-- 目标数据库 -->
+  <context id="MySqlTables" targetRuntime="MyBatis3">
+ 	 
+    <property name="javaFileEncoding" value="UTF-8"/>
+    <commentGenerator type="org.mybatis.generator.MyCommentGenerator">
+        </commentGenerator>
+    <!-- <commentGenerator>    
+            是否去除自动生成的注释 true：是 ： false:否    
+            <property name="suppressAllComments" value="true" />    
+    </commentGenerator> -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://192.168.100.13:3306/db_spxyx_yw"
+        userId="root"
+        password="jhtsp315+++">
+        
+        <property name="remarksReporting" value="true"/>
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    
+
+	<!-- java实体类路径 -->
+    <!-- <javaModelGenerator targetPackage="test.model" targetProject="\MBGTestProject\src"> -->
+    <javaModelGenerator targetPackage="com.jht.common.entity" targetProject="D:\jhtWorkspace\SY_S7_Eclipse\yw-tms-common\src\main\java" >
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+	<!-- sqlmap xml -->
+    <!-- <sqlMapGenerator targetPackage="test.xml"  targetProject="\MBGTestProject\src"> -->
+    <sqlMapGenerator targetPackage="sql"  targetProject="D:\jhtWorkspace\SY_S7_Eclipse\yw-tms-common\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+	
+	<!-- mapper -->
+	<!-- <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="\MBGTestProject\src"> -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.jht.common.mapper"  targetProject="D:\jhtWorkspace\SY_S7_Eclipse\yw-tms-common\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+
+ 	<table schema="TbBasiccmpyinfo" tableName="tb_basiccmpyinfo"  
+        domainObjectName="TbBasiccmpyinfo" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbBasicfun" tableName="tb_basicfun"  
+        domainObjectName="TbBasicfun" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbBasicrole" tableName="tb_basicrole"  
+        domainObjectName="TbBasicrole" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbBasicsystem" tableName="tb_basicsystem"  
+        domainObjectName="TbBasicsystem" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbBasicuserinfo" tableName="tb_basicuserinfo"  
+        domainObjectName="TbBasicuserinfo" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbCmpytorole" tableName="tb_cmpytorole"  
+        domainObjectName="TbCmpytorole" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbCmpytosys" tableName="tb_cmpytosys"  
+        domainObjectName="TbCmpytosys" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbJhtadmin" tableName="tb_jhtadmin"  
+        domainObjectName="TbJhtadmin" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbOperinfo" tableName="tb_operinfo"  
+        domainObjectName="TbOperinfo" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbRoletofun" tableName="tb_roletofun"  
+        domainObjectName="TbRoletofun" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="TbUsertorole" tableName="tb_usertorole"  
+        domainObjectName="TbUsertorole" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    
+
+ 	
+  </context>
+</generatorConfiguration>
