@@ -17,8 +17,13 @@
             是否去除自动生成的注释 true：是 ： false:否    
             <property name="suppressAllComments" value="true" />    
     </commentGenerator> -->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+    <!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
         connectionURL="jdbc:mysql://192.168.100.104:3306/db_ssmvue"
+        userId="root"
+        password="123456"> -->
+        
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://192.168.100.104:3306/db_redpack"
         userId="root"
         password="123456">
         
@@ -32,27 +37,44 @@
 
 	<!-- java实体类路径 -->
     <!-- <javaModelGenerator targetPackage="test.model" targetProject="\MBGTestProject\src"> -->
-    <javaModelGenerator targetPackage="com.ssmvue.entity" targetProject="D:\SSM_VUE\src\main\java" >
+    <!-- <javaModelGenerator targetPackage="com.ssmvue.entity" targetProject="D:\SSM_VUE\src\main\java" >
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator> -->
+    
+    <javaModelGenerator targetPackage="com.sc.entity" targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\java" >
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
     
-
 	<!-- sqlmap xml -->
     <!-- <sqlMapGenerator targetPackage="test.xml"  targetProject="\MBGTestProject\src"> -->
-    <sqlMapGenerator targetPackage="sql"  targetProject="D:\SSM_VUE\src\main\resources">
+    <!-- <sqlMapGenerator targetPackage="sql"  targetProject="D:\SSM_VUE\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator> -->
+    
+    <sqlMapGenerator targetPackage="sql"  targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 	
 	<!-- mapper -->
 	<!-- <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="\MBGTestProject\src"> -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssmvue.mapper"  targetProject="D:\SSM_VUE\src\main\java">
+    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssmvue.mapper"  targetProject="D:\SSM_VUE\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator> -->
+    
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.sc.mapper"  targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
 
- 	<table schema="tb_basic_user" tableName="tb_basic_user"  
-        domainObjectName="BasicUser" enableCountByExample="false"  
+ 	<table schema="Redpack" tableName="tb_redpack"  
+        domainObjectName="Redpack" enableCountByExample="false"  
+        enableDeleteByExample="false" enableSelectByExample="false"  
+        enableUpdateByExample="false">  
+    </table>
+    <table schema="UserRedpack" tableName="tb_user_redpack"  
+        domainObjectName="UserRedpack" enableCountByExample="false"  
         enableDeleteByExample="false" enableSelectByExample="false"  
         enableUpdateByExample="false">  
     </table>
