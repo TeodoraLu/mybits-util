@@ -26,7 +26,7 @@ public class StartUp {
     	    DefaultShellCallback callback = new DefaultShellCallback(overwrite);
     	    MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
     	    myBatisGenerator.generate(null);
-            
+            System.out.println("Mybatis Generator 逆向生成Dao完成");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -1,5 +1,7 @@
 package module;
 
+import static org.mybatis.generator.internal.util.StringUtility.isTrue;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
@@ -17,8 +19,10 @@ import org.mybatis.generator.api.dom.java.Parameter;
 import org.mybatis.generator.api.dom.xml.XmlElement;
 import org.mybatis.generator.config.MergeConstants;
 import org.mybatis.generator.config.PropertyRegistry;
-import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 
+/**
+ * 自定义注释
+ */
 public class MyCommentGenerator implements CommentGenerator{
 
 	private Properties properties;
@@ -37,28 +41,20 @@ public class MyCommentGenerator implements CommentGenerator{
     }
 
     public void addJavaFileComment(CompilationUnit compilationUnit) {
-        // add no file level comments by default
         return;
     }
 
-    /**
-     * Adds a suitable comment to warn users that the element was generated, and
-     * when it was generated.
-     */
     public void addComment(XmlElement xmlElement) {
         return;
     }
 
     public void addRootComment(XmlElement rootElement) {
-        // add no document level comments by default
         return;
     }
 
     public void addConfigurationProperties(Properties properties) {
         this.properties.putAll(properties);
-
         suppressDate = isTrue(properties.getProperty(PropertyRegistry.COMMENT_GENERATOR_SUPPRESS_DATE));
-
         suppressAllComments = isTrue(properties.getProperty(PropertyRegistry.COMMENT_GENERATOR_SUPPRESS_ALL_COMMENTS));
     }
 
@@ -75,7 +71,8 @@ public class MyCommentGenerator implements CommentGenerator{
         javaElement.addJavaDocLine(" *");
         StringBuilder sb = new StringBuilder();
         sb.append(" * ");
-        sb.append(MergeConstants.NEW_ELEMENT_TAG);
+        //sb.append(MergeConstants.NEW_ELEMENT_TAG);
+        sb.append("@caiqing116");
         if (markAsDoNotDelete) {
             sb.append(" do_not_delete_during_merge");
         }
@@ -128,6 +125,7 @@ public class MyCommentGenerator implements CommentGenerator{
         innerEnum.addJavaDocLine(" */");
     }
 
+    //属性注释
     public void addFieldComment(Field field, IntrospectedTable introspectedTable,
             IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -141,6 +139,7 @@ public class MyCommentGenerator implements CommentGenerator{
         field.addJavaDocLine(" */");
     }
 
+    //属性注释
     public void addFieldComment(Field field, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -154,6 +153,7 @@ public class MyCommentGenerator implements CommentGenerator{
         field.addJavaDocLine(" */");
     }
 
+    //方法注释
     public void addGeneralMethodComment(Method method, IntrospectedTable introspectedTable) {
         if (suppressAllComments) {
             return;
@@ -163,6 +163,7 @@ public class MyCommentGenerator implements CommentGenerator{
       method.addJavaDocLine(" */");
     }
 
+    //get方法注释
     public void addGetterComment(Method method, IntrospectedTable introspectedTable,
             IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -182,6 +183,7 @@ public class MyCommentGenerator implements CommentGenerator{
         method.addJavaDocLine(" */");
     }
 
+    //set方法注释
     public void addSetterComment(Method method, IntrospectedTable introspectedTable,
             IntrospectedColumn introspectedColumn) {
         if (suppressAllComments) {
@@ -202,6 +204,7 @@ public class MyCommentGenerator implements CommentGenerator{
         method.addJavaDocLine(" */");
     }
 
+    //类注释
     public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable, boolean markAsDoNotDelete) {
         if (suppressAllComments) {
             return;

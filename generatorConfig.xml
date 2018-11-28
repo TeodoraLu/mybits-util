@@ -2,28 +2,23 @@
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-
 <generatorConfiguration>
-  <!-- <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" /> -->
-
-	
 
   <!-- 目标数据库 -->
   <context id="MySqlTables" targetRuntime="MyBatis3">
  	 
     <property name="javaFileEncoding" value="UTF-8"/>
+    
+    <!-- 自定义注释 -->
     <commentGenerator type="module.MyCommentGenerator"></commentGenerator>
-    <!-- <commentGenerator>    
-            是否去除自动生成的注释 true：是 ： false:否    
+    
+    <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
+    <!-- <commentGenerator>  
             <property name="suppressAllComments" value="true" />    
     </commentGenerator> -->
-    <!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://192.168.100.104:3306/db_ssmvue"
-        userId="root"
-        password="123456"> -->
         
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://192.168.100.104:3306/db_redpack"
+        connectionURL="jdbc:mysql://192.168.100.104:3306/db_ssmdemo"
         userId="root"
         password="123456">
         
@@ -31,56 +26,32 @@
     </jdbcConnection>
 
     <javaTypeResolver >
-      <property name="forceBigDecimals" value="false" />
+    	<property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
-    
 
 	<!-- java实体类路径 -->
-    <!-- <javaModelGenerator targetPackage="test.model" targetProject="\MBGTestProject\src"> -->
-    <!-- <javaModelGenerator targetPackage="com.ssmvue.entity" targetProject="D:\SSM_VUE\src\main\java" >
-      <property name="enableSubPackages" value="true" />
-      <property name="trimStrings" value="true" />
-    </javaModelGenerator> -->
-    
-    <javaModelGenerator targetPackage="com.sc.entity" targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\java" >
+    <javaModelGenerator targetPackage="com.ssm.entity" targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\java" >
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
     
 	<!-- sqlmap xml -->
-    <!-- <sqlMapGenerator targetPackage="test.xml"  targetProject="\MBGTestProject\src"> -->
-    <!-- <sqlMapGenerator targetPackage="sql"  targetProject="D:\SSM_VUE\src\main\resources">
-      <property name="enableSubPackages" value="true" />
-    </sqlMapGenerator> -->
-    
-    <sqlMapGenerator targetPackage="sql"  targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\resources">
+    <sqlMapGenerator targetPackage="sql"  targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 	
 	<!-- mapper -->
-	<!-- <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="\MBGTestProject\src"> -->
-    <!-- <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssmvue.mapper"  targetProject="D:\SSM_VUE\src\main\java">
-      <property name="enableSubPackages" value="true" />
-    </javaClientGenerator> -->
-    
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.sc.mapper"  targetProject="D:\cqWorksapceCloud\RabbitMQ-RedPack\src\main\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssm.mapper"  targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
-
- 	<table schema="Redpack" tableName="tb_redpack"  
-        domainObjectName="Redpack" enableCountByExample="false"  
+	<!-- 要逆向生成Dao的所有表 -->
+ 	<table schema="BasicUser" tableName="tb_basic_user"  
+        domainObjectName="BasicUser" enableCountByExample="false"  
         enableDeleteByExample="false" enableSelectByExample="false"  
         enableUpdateByExample="false">  
     </table>
-    <table schema="UserRedpack" tableName="tb_user_redpack"  
-        domainObjectName="UserRedpack" enableCountByExample="false"  
-        enableDeleteByExample="false" enableSelectByExample="false"  
-        enableUpdateByExample="false">  
-    </table>
-   
     
-
  	
   </context>
 </generatorConfiguration>
