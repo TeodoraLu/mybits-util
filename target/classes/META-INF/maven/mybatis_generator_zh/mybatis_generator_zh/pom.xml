@@ -4,13 +4,9 @@
   <artifactId>mybatis_generator_zh</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name/>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.1.4.RELEASE</spring.version>
-	<jackson.version>2.5.0</jackson.version>
   </properties>
-  
   <dependencies>
 		
 		<!-- mysql连接 -->
