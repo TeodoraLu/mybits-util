@@ -18,7 +18,7 @@
     </commentGenerator> -->
         
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://192.168.100.104:3306/db_ssmdemo"
+        connectionURL="jdbc:mysql://127.0.0.1:3306/db_ssmdemo"
         userId="root"
         password="123456">
         
