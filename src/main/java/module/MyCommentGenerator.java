@@ -72,7 +72,7 @@ public class MyCommentGenerator implements CommentGenerator{
         StringBuilder sb = new StringBuilder();
         sb.append(" * ");
         //sb.append(MergeConstants.NEW_ELEMENT_TAG);
-        sb.append("@caiqing116");
+        sb.append("@ https://blog.csdn.net/caiqing116");
         if (markAsDoNotDelete) {
             sb.append(" do_not_delete_during_merge");
         }
@@ -216,7 +216,8 @@ public class MyCommentGenerator implements CommentGenerator{
         innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
         sb.setLength(0);
         sb.append(" * @author ");
-        sb.append(systemPro.getProperty("user.name"));
+        //sb.append(systemPro.getProperty("user.name"));
+        sb.append(" https://blog.csdn.net/caiqing116");
         sb.append(" ");
         sb.append(currentDateStr);
         innerClass.addJavaDocLine(" */");
