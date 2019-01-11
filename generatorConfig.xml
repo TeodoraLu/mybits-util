@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
   <!-- 目标数据库 -->
-  <context id="MySqlTables" targetRuntime="MyBatis3">
+  <context id="sqlserverTables" targetRuntime="MyBatis3">
  	 
     <property name="javaFileEncoding" value="UTF-8"/>
     
     <!-- 自定义注释 -->
-    <commentGenerator type="module.MyCommentGenerator"></commentGenerator>
+    <commentGenerator type="module.MyCommentGenerator">
+      <property name="suppressAllComments" value="true" />
+    </commentGenerator>
     
     <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
-    <!-- <commentGenerator>  
-            <property name="suppressAllComments" value="true" />    
-    </commentGenerator> -->
+   <!--  <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+    </commentGenerator>-->
         
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-        connectionURL="jdbc:mysql://127.0.0.1:3306/db_ssmdemo"
-        userId="root"
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        connectionURL="jdbc:sqlserver://10.10.231.31:1433;database=OES"
+        userId="sa "
         password="123456">
         
         <property name="remarksReporting" value="true"/>
@@ -30,28 +32,27 @@
     </javaTypeResolver>
 
 	<!-- java实体类路径 -->
-    <javaModelGenerator targetPackage="com.ssm.entity" targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\java" >
+    <javaModelGenerator targetPackage="com.entity" targetProject="src/main/java" >
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
     
 	<!-- sqlmap xml -->
-    <sqlMapGenerator targetPackage="sql"  targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\resources">
+    <sqlMapGenerator targetPackage="sql"  targetProject="src/main/resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 	
 	<!-- mapper -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ssm.mapper"  targetProject="D:\cqWorksapceCloud\SSM_DEMO\src\main\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper"  targetProject="src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
 	<!-- 要逆向生成Dao的所有表 -->
- 	<table schema="BasicUser" tableName="tb_basic_user"  
-        domainObjectName="BasicUser" enableCountByExample="false"  
-        enableDeleteByExample="false" enableSelectByExample="false"  
-        enableUpdateByExample="false">  
+    <table schema="" tableName="sys_mate_dict" domainObjectName="MateDict" enableCountByExample="false" enableSelectByExample="false"
+           enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
     </table>
-    
- 	
+
+
+
   </context>
 </generatorConfiguration>

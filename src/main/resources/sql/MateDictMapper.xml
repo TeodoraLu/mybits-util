@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.MateDictMapper" >
+  <resultMap id="BaseResultMap" type="com.entity.MateDict" >
+    <id column="mate_id" property="mateId" jdbcType="INTEGER" />
+    <result column="inv_code" property="invCode" jdbcType="NVARCHAR" />
+    <result column="inv_name" property="invName" jdbcType="NVARCHAR" />
+    <result column="mate_type_id" property="mateTypeId" jdbcType="INTEGER" />
+    <result column="spell" property="spell" jdbcType="NVARCHAR" />
+    <result column="inv_sepc" property="invSepc" jdbcType="NVARCHAR" />
+    <result column="inv_model" property="invModel" jdbcType="NVARCHAR" />
+    <result column="unit_id" property="unitId" jdbcType="INTEGER" />
+    <result column="inv_attr_code" property="invAttrCode" jdbcType="INTEGER" />
+    <result column="plan_price" property="planPrice" jdbcType="NUMERIC" />
+    <result column="cus_code" property="cusCode" jdbcType="NVARCHAR" />
+    <result column="abc" property="abc" jdbcType="NCHAR" />
+    <result column="is_dura" property="isDura" jdbcType="CHAR" />
+    <result column="factory_code" property="factoryCode" jdbcType="NVARCHAR" />
+    <result column="cert_code" property="certCode" jdbcType="NVARCHAR" />
+    <result column="brand_name" property="brandName" jdbcType="NVARCHAR" />
+    <result column="alias" property="alias" jdbcType="NVARCHAR" />
+    <result column="is_charge" property="isCharge" jdbcType="CHAR" />
+    <result column="amortize_type" property="amortizeType" jdbcType="CHAR" />
+    <result column="is_highvalue" property="isHighvalue" jdbcType="CHAR" />
+    <result column="price_type" property="priceType" jdbcType="CHAR" />
+    <result column="bid_mate_code" property="bidMateCode" jdbcType="NVARCHAR" />
+    <result column="inv_sourc" property="invSourc" jdbcType="INTEGER" />
+    <result column="is_stop" property="isStop" jdbcType="CHAR" />
+    <result column="is_bar" property="isBar" jdbcType="CHAR" />
+    <result column="bar_code" property="barCode" jdbcType="NVARCHAR" />
+    <result column="fina_type_id" property="finaTypeId" jdbcType="INTEGER" />
+    <result column="is_cert" property="isCert" jdbcType="CHAR" />
+    <result column="is_reagent" property="isReagent" jdbcType="CHAR" />
+    <result column="out_code" property="outCode" jdbcType="NVARCHAR" />
+    <result column="up_comp_code" property="upCompCode" jdbcType="VARCHAR" />
+    <result column="down_comp_code" property="downCompCode" jdbcType="VARCHAR" />
+    <result column="is_confirm" property="isConfirm" jdbcType="VARCHAR" />
+    <result column="up_type" property="upType" jdbcType="VARCHAR" />
+    <result column="up_date" property="upDate" jdbcType="TIMESTAMP" />
+    <result column="down_date" property="downDate" jdbcType="VARCHAR" />
+    <result column="is_quality" property="isQuality" jdbcType="INTEGER" />
+    <result column="max_pack_num" property="maxPackNum" jdbcType="INTEGER" />
+    <result column="min_pack_num" property="minPackNum" jdbcType="INTEGER" />
+    <result column="pur_attribute" property="purAttribute" jdbcType="CHAR" />
+    <result column="pur_emp" property="purEmp" jdbcType="INTEGER" />
+    <result column="domestic_import" property="domesticImport" jdbcType="VARCHAR" />
+    <result column="mate_photo" property="matePhoto" jdbcType="NVARCHAR" />
+    <result column="charge_code" property="chargeCode" jdbcType="VARCHAR" />
+    <result column="purc_unit_id" property="purcUnitId" jdbcType="INTEGER" />
+    <result column="purc_package" property="purcPackage" jdbcType="NVARCHAR" />
+    <result column="used_unit_id" property="usedUnitId" jdbcType="INTEGER" />
+    <result column="used_package" property="usedPackage" jdbcType="NVARCHAR" />
+    <result column="is_dispense" property="isDispense" jdbcType="CHAR" />
+    <result column="is_record" property="isRecord" jdbcType="CHAR" />
+    <result column="cost_differentiation" property="costDifferentiation" jdbcType="CHAR" />
+    <result column="is_packageField" property="isPackagefield" jdbcType="CHAR" />
+    <result column="purc_type" property="purcType" jdbcType="CHAR" />
+    <result column="part_type_code" property="partTypeCode" jdbcType="NVARCHAR" />
+    <result column="health_committee_type_id" property="healthCommitteeTypeId" jdbcType="NVARCHAR" />
+    <result column="purchase_method" property="purchaseMethod" jdbcType="NVARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="NVARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="NVARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="stop_time" property="stopTime" jdbcType="TIMESTAMP" />
+    <result column="ylqx_mgr_type_id" property="ylqxMgrTypeId" jdbcType="NVARCHAR" />
+    <result column="producing_area" property="producingArea" jdbcType="NVARCHAR" />
+    <result column="is_implantation" property="isImplantation" jdbcType="NVARCHAR" />
+    <result column="product_desc" property="productDesc" jdbcType="NVARCHAR" />
+    <result column="stop_desc" property="stopDesc" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    mate_id, inv_code, inv_name, mate_type_id, spell, inv_sepc, inv_model, unit_id, inv_attr_code, 
+    plan_price, cus_code, abc, is_dura, factory_code, cert_code, brand_name, alias, is_charge, 
+    amortize_type, is_highvalue, price_type, bid_mate_code, inv_sourc, is_stop, is_bar, 
+    bar_code, fina_type_id, is_cert, is_reagent, out_code, up_comp_code, down_comp_code, 
+    is_confirm, up_type, up_date, down_date, is_quality, max_pack_num, min_pack_num, 
+    pur_attribute, pur_emp, domestic_import, mate_photo, charge_code, purc_unit_id, purc_package, 
+    used_unit_id, used_package, is_dispense, is_record, cost_differentiation, is_packageField, 
+    purc_type, part_type_code, health_committee_type_id, purchase_method, create_user, 
+    create_time, update_user, update_time, stop_time, ylqx_mgr_type_id, producing_area, 
+    is_implantation, product_desc, stop_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_mate_dict
+    where mate_id = #{mateId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_mate_dict
+    where mate_id = #{mateId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.entity.MateDict" >
+    insert into sys_mate_dict (mate_id, inv_code, inv_name, 
+      mate_type_id, spell, inv_sepc, 
+      inv_model, unit_id, inv_attr_code, 
+      plan_price, cus_code, abc, 
+      is_dura, factory_code, cert_code, 
+      brand_name, alias, is_charge, 
+      amortize_type, is_highvalue, price_type, 
+      bid_mate_code, inv_sourc, is_stop, 
+      is_bar, bar_code, fina_type_id, 
+      is_cert, is_reagent, out_code, 
+      up_comp_code, down_comp_code, is_confirm, 
+      up_type, up_date, down_date, 
+      is_quality, max_pack_num, min_pack_num, 
+      pur_attribute, pur_emp, domestic_import, 
+      mate_photo, charge_code, purc_unit_id, 
+      purc_package, used_unit_id, used_package, 
+      is_dispense, is_record, cost_differentiation, 
+      is_packageField, purc_type, part_type_code, 
+      health_committee_type_id, purchase_method, 
+      create_user, create_time, update_user, 
+      update_time, stop_time, ylqx_mgr_type_id, 
+      producing_area, is_implantation, product_desc, 
+      stop_desc)
+    values (#{mateId,jdbcType=INTEGER}, #{invCode,jdbcType=NVARCHAR}, #{invName,jdbcType=NVARCHAR}, 
+      #{mateTypeId,jdbcType=INTEGER}, #{spell,jdbcType=NVARCHAR}, #{invSepc,jdbcType=NVARCHAR}, 
+      #{invModel,jdbcType=NVARCHAR}, #{unitId,jdbcType=INTEGER}, #{invAttrCode,jdbcType=INTEGER}, 
+      #{planPrice,jdbcType=NUMERIC}, #{cusCode,jdbcType=NVARCHAR}, #{abc,jdbcType=NCHAR}, 
+      #{isDura,jdbcType=CHAR}, #{factoryCode,jdbcType=NVARCHAR}, #{certCode,jdbcType=NVARCHAR}, 
+      #{brandName,jdbcType=NVARCHAR}, #{alias,jdbcType=NVARCHAR}, #{isCharge,jdbcType=CHAR}, 
+      #{amortizeType,jdbcType=CHAR}, #{isHighvalue,jdbcType=CHAR}, #{priceType,jdbcType=CHAR}, 
+      #{bidMateCode,jdbcType=NVARCHAR}, #{invSourc,jdbcType=INTEGER}, #{isStop,jdbcType=CHAR}, 
+      #{isBar,jdbcType=CHAR}, #{barCode,jdbcType=NVARCHAR}, #{finaTypeId,jdbcType=INTEGER}, 
+      #{isCert,jdbcType=CHAR}, #{isReagent,jdbcType=CHAR}, #{outCode,jdbcType=NVARCHAR}, 
+      #{upCompCode,jdbcType=VARCHAR}, #{downCompCode,jdbcType=VARCHAR}, #{isConfirm,jdbcType=VARCHAR}, 
+      #{upType,jdbcType=VARCHAR}, #{upDate,jdbcType=TIMESTAMP}, #{downDate,jdbcType=VARCHAR}, 
+      #{isQuality,jdbcType=INTEGER}, #{maxPackNum,jdbcType=INTEGER}, #{minPackNum,jdbcType=INTEGER}, 
+      #{purAttribute,jdbcType=CHAR}, #{purEmp,jdbcType=INTEGER}, #{domesticImport,jdbcType=VARCHAR}, 
+      #{matePhoto,jdbcType=NVARCHAR}, #{chargeCode,jdbcType=VARCHAR}, #{purcUnitId,jdbcType=INTEGER}, 
+      #{purcPackage,jdbcType=NVARCHAR}, #{usedUnitId,jdbcType=INTEGER}, #{usedPackage,jdbcType=NVARCHAR}, 
+      #{isDispense,jdbcType=CHAR}, #{isRecord,jdbcType=CHAR}, #{costDifferentiation,jdbcType=CHAR}, 
+      #{isPackagefield,jdbcType=CHAR}, #{purcType,jdbcType=CHAR}, #{partTypeCode,jdbcType=NVARCHAR}, 
+      #{healthCommitteeTypeId,jdbcType=NVARCHAR}, #{purchaseMethod,jdbcType=NVARCHAR}, 
+      #{createUser,jdbcType=NVARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=NVARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{stopTime,jdbcType=TIMESTAMP}, #{ylqxMgrTypeId,jdbcType=NVARCHAR}, 
+      #{producingArea,jdbcType=NVARCHAR}, #{isImplantation,jdbcType=NVARCHAR}, #{productDesc,jdbcType=NVARCHAR}, 
+      #{stopDesc,jdbcType=NVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.MateDict" >
+    insert into sys_mate_dict
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mateId != null" >
+        mate_id,
+      </if>
+      <if test="invCode != null" >
+        inv_code,
+      </if>
+      <if test="invName != null" >
+        inv_name,
+      </if>
+      <if test="mateTypeId != null" >
+        mate_type_id,
+      </if>
+      <if test="spell != null" >
+        spell,
+      </if>
+      <if test="invSepc != null" >
+        inv_sepc,
+      </if>
+      <if test="invModel != null" >
+        inv_model,
+      </if>
+      <if test="unitId != null" >
+        unit_id,
+      </if>
+      <if test="invAttrCode != null" >
+        inv_attr_code,
+      </if>
+      <if test="planPrice != null" >
+        plan_price,
+      </if>
+      <if test="cusCode != null" >
+        cus_code,
+      </if>
+      <if test="abc != null" >
+        abc,
+      </if>
+      <if test="isDura != null" >
+        is_dura,
+      </if>
+      <if test="factoryCode != null" >
+        factory_code,
+      </if>
+      <if test="certCode != null" >
+        cert_code,
+      </if>
+      <if test="brandName != null" >
+        brand_name,
+      </if>
+      <if test="alias != null" >
+        alias,
+      </if>
+      <if test="isCharge != null" >
+        is_charge,
+      </if>
+      <if test="amortizeType != null" >
+        amortize_type,
+      </if>
+      <if test="isHighvalue != null" >
+        is_highvalue,
+      </if>
+      <if test="priceType != null" >
+        price_type,
+      </if>
+      <if test="bidMateCode != null" >
+        bid_mate_code,
+      </if>
+      <if test="invSourc != null" >
+        inv_sourc,
+      </if>
+      <if test="isStop != null" >
+        is_stop,
+      </if>
+      <if test="isBar != null" >
+        is_bar,
+      </if>
+      <if test="barCode != null" >
+        bar_code,
+      </if>
+      <if test="finaTypeId != null" >
+        fina_type_id,
+      </if>
+      <if test="isCert != null" >
+        is_cert,
+      </if>
+      <if test="isReagent != null" >
+        is_reagent,
+      </if>
+      <if test="outCode != null" >
+        out_code,
+      </if>
+      <if test="upCompCode != null" >
+        up_comp_code,
+      </if>
+      <if test="downCompCode != null" >
+        down_comp_code,
+      </if>
+      <if test="isConfirm != null" >
+        is_confirm,
+      </if>
+      <if test="upType != null" >
+        up_type,
+      </if>
+      <if test="upDate != null" >
+        up_date,
+      </if>
+      <if test="downDate != null" >
+        down_date,
+      </if>
+      <if test="isQuality != null" >
+        is_quality,
+      </if>
+      <if test="maxPackNum != null" >
+        max_pack_num,
+      </if>
+      <if test="minPackNum != null" >
+        min_pack_num,
+      </if>
+      <if test="purAttribute != null" >
+        pur_attribute,
+      </if>
+      <if test="purEmp != null" >
+        pur_emp,
+      </if>
+      <if test="domesticImport != null" >
+        domestic_import,
+      </if>
+      <if test="matePhoto != null" >
+        mate_photo,
+      </if>
+      <if test="chargeCode != null" >
+        charge_code,
+      </if>
+      <if test="purcUnitId != null" >
+        purc_unit_id,
+      </if>
+      <if test="purcPackage != null" >
+        purc_package,
+      </if>
+      <if test="usedUnitId != null" >
+        used_unit_id,
+      </if>
+      <if test="usedPackage != null" >
+        used_package,
+      </if>
+      <if test="isDispense != null" >
+        is_dispense,
+      </if>
+      <if test="isRecord != null" >
+        is_record,
+      </if>
+      <if test="costDifferentiation != null" >
+        cost_differentiation,
+      </if>
+      <if test="isPackagefield != null" >
+        is_packageField,
+      </if>
+      <if test="purcType != null" >
+        purc_type,
+      </if>
+      <if test="partTypeCode != null" >
+        part_type_code,
+      </if>
+      <if test="healthCommitteeTypeId != null" >
+        health_committee_type_id,
+      </if>
+      <if test="purchaseMethod != null" >
+        purchase_method,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="stopTime != null" >
+        stop_time,
+      </if>
+      <if test="ylqxMgrTypeId != null" >
+        ylqx_mgr_type_id,
+      </if>
+      <if test="producingArea != null" >
+        producing_area,
+      </if>
+      <if test="isImplantation != null" >
+        is_implantation,
+      </if>
+      <if test="productDesc != null" >
+        product_desc,
+      </if>
+      <if test="stopDesc != null" >
+        stop_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mateId != null" >
+        #{mateId,jdbcType=INTEGER},
+      </if>
+      <if test="invCode != null" >
+        #{invCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="invName != null" >
+        #{invName,jdbcType=NVARCHAR},
+      </if>
+      <if test="mateTypeId != null" >
+        #{mateTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="spell != null" >
+        #{spell,jdbcType=NVARCHAR},
+      </if>
+      <if test="invSepc != null" >
+        #{invSepc,jdbcType=NVARCHAR},
+      </if>
+      <if test="invModel != null" >
+        #{invModel,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitId != null" >
+        #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="invAttrCode != null" >
+        #{invAttrCode,jdbcType=INTEGER},
+      </if>
+      <if test="planPrice != null" >
+        #{planPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="cusCode != null" >
+        #{cusCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="abc != null" >
+        #{abc,jdbcType=NCHAR},
+      </if>
+      <if test="isDura != null" >
+        #{isDura,jdbcType=CHAR},
+      </if>
+      <if test="factoryCode != null" >
+        #{factoryCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="certCode != null" >
+        #{certCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=NVARCHAR},
+      </if>
+      <if test="alias != null" >
+        #{alias,jdbcType=NVARCHAR},
+      </if>
+      <if test="isCharge != null" >
+        #{isCharge,jdbcType=CHAR},
+      </if>
+      <if test="amortizeType != null" >
+        #{amortizeType,jdbcType=CHAR},
+      </if>
+      <if test="isHighvalue != null" >
+        #{isHighvalue,jdbcType=CHAR},
+      </if>
+      <if test="priceType != null" >
+        #{priceType,jdbcType=CHAR},
+      </if>
+      <if test="bidMateCode != null" >
+        #{bidMateCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="invSourc != null" >
+        #{invSourc,jdbcType=INTEGER},
+      </if>
+      <if test="isStop != null" >
+        #{isStop,jdbcType=CHAR},
+      </if>
+      <if test="isBar != null" >
+        #{isBar,jdbcType=CHAR},
+      </if>
+      <if test="barCode != null" >
+        #{barCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="finaTypeId != null" >
+        #{finaTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="isCert != null" >
+        #{isCert,jdbcType=CHAR},
+      </if>
+      <if test="isReagent != null" >
+        #{isReagent,jdbcType=CHAR},
+      </if>
+      <if test="outCode != null" >
+        #{outCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="upCompCode != null" >
+        #{upCompCode,jdbcType=VARCHAR},
+      </if>
+      <if test="downCompCode != null" >
+        #{downCompCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isConfirm != null" >
+        #{isConfirm,jdbcType=VARCHAR},
+      </if>
+      <if test="upType != null" >
+        #{upType,jdbcType=VARCHAR},
+      </if>
+      <if test="upDate != null" >
+        #{upDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="downDate != null" >
+        #{downDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isQuality != null" >
+        #{isQuality,jdbcType=INTEGER},
+      </if>
+      <if test="maxPackNum != null" >
+        #{maxPackNum,jdbcType=INTEGER},
+      </if>
+      <if test="minPackNum != null" >
+        #{minPackNum,jdbcType=INTEGER},
+      </if>
+      <if test="purAttribute != null" >
+        #{purAttribute,jdbcType=CHAR},
+      </if>
+      <if test="purEmp != null" >
+        #{purEmp,jdbcType=INTEGER},
+      </if>
+      <if test="domesticImport != null" >
+        #{domesticImport,jdbcType=VARCHAR},
+      </if>
+      <if test="matePhoto != null" >
+        #{matePhoto,jdbcType=NVARCHAR},
+      </if>
+      <if test="chargeCode != null" >
+        #{chargeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="purcUnitId != null" >
+        #{purcUnitId,jdbcType=INTEGER},
+      </if>
+      <if test="purcPackage != null" >
+        #{purcPackage,jdbcType=NVARCHAR},
+      </if>
+      <if test="usedUnitId != null" >
+        #{usedUnitId,jdbcType=INTEGER},
+      </if>
+      <if test="usedPackage != null" >
+        #{usedPackage,jdbcType=NVARCHAR},
+      </if>
+      <if test="isDispense != null" >
+        #{isDispense,jdbcType=CHAR},
+      </if>
+      <if test="isRecord != null" >
+        #{isRecord,jdbcType=CHAR},
+      </if>
+      <if test="costDifferentiation != null" >
+        #{costDifferentiation,jdbcType=CHAR},
+      </if>
+      <if test="isPackagefield != null" >
+        #{isPackagefield,jdbcType=CHAR},
+      </if>
+      <if test="purcType != null" >
+        #{purcType,jdbcType=CHAR},
+      </if>
+      <if test="partTypeCode != null" >
+        #{partTypeCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="healthCommitteeTypeId != null" >
+        #{healthCommitteeTypeId,jdbcType=NVARCHAR},
+      </if>
+      <if test="purchaseMethod != null" >
+        #{purchaseMethod,jdbcType=NVARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=NVARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=NVARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopTime != null" >
+        #{stopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ylqxMgrTypeId != null" >
+        #{ylqxMgrTypeId,jdbcType=NVARCHAR},
+      </if>
+      <if test="producingArea != null" >
+        #{producingArea,jdbcType=NVARCHAR},
+      </if>
+      <if test="isImplantation != null" >
+        #{isImplantation,jdbcType=NVARCHAR},
+      </if>
+      <if test="productDesc != null" >
+        #{productDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="stopDesc != null" >
+        #{stopDesc,jdbcType=NVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.MateDict" >
+    update sys_mate_dict
+    <set >
+      <if test="invCode != null" >
+        inv_code = #{invCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="invName != null" >
+        inv_name = #{invName,jdbcType=NVARCHAR},
+      </if>
+      <if test="mateTypeId != null" >
+        mate_type_id = #{mateTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="spell != null" >
+        spell = #{spell,jdbcType=NVARCHAR},
+      </if>
+      <if test="invSepc != null" >
+        inv_sepc = #{invSepc,jdbcType=NVARCHAR},
+      </if>
+      <if test="invModel != null" >
+        inv_model = #{invModel,jdbcType=NVARCHAR},
+      </if>
+      <if test="unitId != null" >
+        unit_id = #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="invAttrCode != null" >
+        inv_attr_code = #{invAttrCode,jdbcType=INTEGER},
+      </if>
+      <if test="planPrice != null" >
+        plan_price = #{planPrice,jdbcType=NUMERIC},
+      </if>
+      <if test="cusCode != null" >
+        cus_code = #{cusCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="abc != null" >
+        abc = #{abc,jdbcType=NCHAR},
+      </if>
+      <if test="isDura != null" >
+        is_dura = #{isDura,jdbcType=CHAR},
+      </if>
+      <if test="factoryCode != null" >
+        factory_code = #{factoryCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="certCode != null" >
+        cert_code = #{certCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="brandName != null" >
+        brand_name = #{brandName,jdbcType=NVARCHAR},
+      </if>
+      <if test="alias != null" >
+        alias = #{alias,jdbcType=NVARCHAR},
+      </if>
+      <if test="isCharge != null" >
+        is_charge = #{isCharge,jdbcType=CHAR},
+      </if>
+      <if test="amortizeType != null" >
+        amortize_type = #{amortizeType,jdbcType=CHAR},
+      </if>
+      <if test="isHighvalue != null" >
+        is_highvalue = #{isHighvalue,jdbcType=CHAR},
+      </if>
+      <if test="priceType != null" >
+        price_type = #{priceType,jdbcType=CHAR},
+      </if>
+      <if test="bidMateCode != null" >
+        bid_mate_code = #{bidMateCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="invSourc != null" >
+        inv_sourc = #{invSourc,jdbcType=INTEGER},
+      </if>
+      <if test="isStop != null" >
+        is_stop = #{isStop,jdbcType=CHAR},
+      </if>
+      <if test="isBar != null" >
+        is_bar = #{isBar,jdbcType=CHAR},
+      </if>
+      <if test="barCode != null" >
+        bar_code = #{barCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="finaTypeId != null" >
+        fina_type_id = #{finaTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="isCert != null" >
+        is_cert = #{isCert,jdbcType=CHAR},
+      </if>
+      <if test="isReagent != null" >
+        is_reagent = #{isReagent,jdbcType=CHAR},
+      </if>
+      <if test="outCode != null" >
+        out_code = #{outCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="upCompCode != null" >
+        up_comp_code = #{upCompCode,jdbcType=VARCHAR},
+      </if>
+      <if test="downCompCode != null" >
+        down_comp_code = #{downCompCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isConfirm != null" >
+        is_confirm = #{isConfirm,jdbcType=VARCHAR},
+      </if>
+      <if test="upType != null" >
+        up_type = #{upType,jdbcType=VARCHAR},
+      </if>
+      <if test="upDate != null" >
+        up_date = #{upDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="downDate != null" >
+        down_date = #{downDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isQuality != null" >
+        is_quality = #{isQuality,jdbcType=INTEGER},
+      </if>
+      <if test="maxPackNum != null" >
+        max_pack_num = #{maxPackNum,jdbcType=INTEGER},
+      </if>
+      <if test="minPackNum != null" >
+        min_pack_num = #{minPackNum,jdbcType=INTEGER},
+      </if>
+      <if test="purAttribute != null" >
+        pur_attribute = #{purAttribute,jdbcType=CHAR},
+      </if>
+      <if test="purEmp != null" >
+        pur_emp = #{purEmp,jdbcType=INTEGER},
+      </if>
+      <if test="domesticImport != null" >
+        domestic_import = #{domesticImport,jdbcType=VARCHAR},
+      </if>
+      <if test="matePhoto != null" >
+        mate_photo = #{matePhoto,jdbcType=NVARCHAR},
+      </if>
+      <if test="chargeCode != null" >
+        charge_code = #{chargeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="purcUnitId != null" >
+        purc_unit_id = #{purcUnitId,jdbcType=INTEGER},
+      </if>
+      <if test="purcPackage != null" >
+        purc_package = #{purcPackage,jdbcType=NVARCHAR},
+      </if>
+      <if test="usedUnitId != null" >
+        used_unit_id = #{usedUnitId,jdbcType=INTEGER},
+      </if>
+      <if test="usedPackage != null" >
+        used_package = #{usedPackage,jdbcType=NVARCHAR},
+      </if>
+      <if test="isDispense != null" >
+        is_dispense = #{isDispense,jdbcType=CHAR},
+      </if>
+      <if test="isRecord != null" >
+        is_record = #{isRecord,jdbcType=CHAR},
+      </if>
+      <if test="costDifferentiation != null" >
+        cost_differentiation = #{costDifferentiation,jdbcType=CHAR},
+      </if>
+      <if test="isPackagefield != null" >
+        is_packageField = #{isPackagefield,jdbcType=CHAR},
+      </if>
+      <if test="purcType != null" >
+        purc_type = #{purcType,jdbcType=CHAR},
+      </if>
+      <if test="partTypeCode != null" >
+        part_type_code = #{partTypeCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="healthCommitteeTypeId != null" >
+        health_committee_type_id = #{healthCommitteeTypeId,jdbcType=NVARCHAR},
+      </if>
+      <if test="purchaseMethod != null" >
+        purchase_method = #{purchaseMethod,jdbcType=NVARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=NVARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=NVARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stopTime != null" >
+        stop_time = #{stopTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ylqxMgrTypeId != null" >
+        ylqx_mgr_type_id = #{ylqxMgrTypeId,jdbcType=NVARCHAR},
+      </if>
+      <if test="producingArea != null" >
+        producing_area = #{producingArea,jdbcType=NVARCHAR},
+      </if>
+      <if test="isImplantation != null" >
+        is_implantation = #{isImplantation,jdbcType=NVARCHAR},
+      </if>
+      <if test="productDesc != null" >
+        product_desc = #{productDesc,jdbcType=NVARCHAR},
+      </if>
+      <if test="stopDesc != null" >
+        stop_desc = #{stopDesc,jdbcType=NVARCHAR},
+      </if>
+    </set>
+    where mate_id = #{mateId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.MateDict" >
+    update sys_mate_dict
+    set inv_code = #{invCode,jdbcType=NVARCHAR},
+      inv_name = #{invName,jdbcType=NVARCHAR},
+      mate_type_id = #{mateTypeId,jdbcType=INTEGER},
+      spell = #{spell,jdbcType=NVARCHAR},
+      inv_sepc = #{invSepc,jdbcType=NVARCHAR},
+      inv_model = #{invModel,jdbcType=NVARCHAR},
+      unit_id = #{unitId,jdbcType=INTEGER},
+      inv_attr_code = #{invAttrCode,jdbcType=INTEGER},
+      plan_price = #{planPrice,jdbcType=NUMERIC},
+      cus_code = #{cusCode,jdbcType=NVARCHAR},
+      abc = #{abc,jdbcType=NCHAR},
+      is_dura = #{isDura,jdbcType=CHAR},
+      factory_code = #{factoryCode,jdbcType=NVARCHAR},
+      cert_code = #{certCode,jdbcType=NVARCHAR},
+      brand_name = #{brandName,jdbcType=NVARCHAR},
+      alias = #{alias,jdbcType=NVARCHAR},
+      is_charge = #{isCharge,jdbcType=CHAR},
+      amortize_type = #{amortizeType,jdbcType=CHAR},
+      is_highvalue = #{isHighvalue,jdbcType=CHAR},
+      price_type = #{priceType,jdbcType=CHAR},
+      bid_mate_code = #{bidMateCode,jdbcType=NVARCHAR},
+      inv_sourc = #{invSourc,jdbcType=INTEGER},
+      is_stop = #{isStop,jdbcType=CHAR},
+      is_bar = #{isBar,jdbcType=CHAR},
+      bar_code = #{barCode,jdbcType=NVARCHAR},
+      fina_type_id = #{finaTypeId,jdbcType=INTEGER},
+      is_cert = #{isCert,jdbcType=CHAR},
+      is_reagent = #{isReagent,jdbcType=CHAR},
+      out_code = #{outCode,jdbcType=NVARCHAR},
+      up_comp_code = #{upCompCode,jdbcType=VARCHAR},
+      down_comp_code = #{downCompCode,jdbcType=VARCHAR},
+      is_confirm = #{isConfirm,jdbcType=VARCHAR},
+      up_type = #{upType,jdbcType=VARCHAR},
+      up_date = #{upDate,jdbcType=TIMESTAMP},
+      down_date = #{downDate,jdbcType=VARCHAR},
+      is_quality = #{isQuality,jdbcType=INTEGER},
+      max_pack_num = #{maxPackNum,jdbcType=INTEGER},
+      min_pack_num = #{minPackNum,jdbcType=INTEGER},
+      pur_attribute = #{purAttribute,jdbcType=CHAR},
+      pur_emp = #{purEmp,jdbcType=INTEGER},
+      domestic_import = #{domesticImport,jdbcType=VARCHAR},
+      mate_photo = #{matePhoto,jdbcType=NVARCHAR},
+      charge_code = #{chargeCode,jdbcType=VARCHAR},
+      purc_unit_id = #{purcUnitId,jdbcType=INTEGER},
+      purc_package = #{purcPackage,jdbcType=NVARCHAR},
+      used_unit_id = #{usedUnitId,jdbcType=INTEGER},
+      used_package = #{usedPackage,jdbcType=NVARCHAR},
+      is_dispense = #{isDispense,jdbcType=CHAR},
+      is_record = #{isRecord,jdbcType=CHAR},
+      cost_differentiation = #{costDifferentiation,jdbcType=CHAR},
+      is_packageField = #{isPackagefield,jdbcType=CHAR},
+      purc_type = #{purcType,jdbcType=CHAR},
+      part_type_code = #{partTypeCode,jdbcType=NVARCHAR},
+      health_committee_type_id = #{healthCommitteeTypeId,jdbcType=NVARCHAR},
+      purchase_method = #{purchaseMethod,jdbcType=NVARCHAR},
+      create_user = #{createUser,jdbcType=NVARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=NVARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      stop_time = #{stopTime,jdbcType=TIMESTAMP},
+      ylqx_mgr_type_id = #{ylqxMgrTypeId,jdbcType=NVARCHAR},
+      producing_area = #{producingArea,jdbcType=NVARCHAR},
+      is_implantation = #{isImplantation,jdbcType=NVARCHAR},
+      product_desc = #{productDesc,jdbcType=NVARCHAR},
+      stop_desc = #{stopDesc,jdbcType=NVARCHAR}
+    where mate_id = #{mateId,jdbcType=INTEGER}
+  </update>
+</mapper>
