@@ -11,29 +11,29 @@
     
     <!-- 自定义注释 -->
     <commentGenerator type="module.MyCommentGenerator">
-      <property name="suppressAllComments" value="true" />
+      <property name="suppressAllComments" value="false" />
     </commentGenerator>
     
     <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
-   <!--  <commentGenerator>
-            <property name="suppressAllComments" value="true" />
-    </commentGenerator>-->
+     <!--<commentGenerator>-->
+            <!--<property name="suppressAllComments" value="false" />-->
+    <!--</commentGenerator>-->
         
-    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-        connectionURL="jdbc:sqlserver://10.10.231.31:1433;database=OES"
-        userId="sa "
-        password="123456">
+    <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"-->
+        <!--connectionURL="jdbc:sqlserver://10.10.231.31:1433;database=OES"-->
+        <!--userId="sa "-->
+        <!--password="123456">-->
 
-        <property name="remarksReporting" value="true"/>
-    </jdbcConnection>
-
-    <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"-->
-                    <!--connectionURL="jdbc:oracle:thin:@//10.10.231.31:1521/XE"-->
-                    <!--userId="OES510_DEV190102 "-->
-                    <!--password="123456">-->
-
-      <!--<property name="remarksReporting" value="true"/>-->
+        <!--<property name="remarksReporting" value="true"/>-->
     <!--</jdbcConnection>-->
+
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                    connectionURL="jdbc:oracle:thin:@//10.10.231.31:1521/XE"
+                    userId="OES510_DEV190102 "
+                    password="123456">
+
+      <property name="remarksReporting" value="true"/>
+    </jdbcConnection>
 
 
     <javaTypeResolver type="module.MyJavaTypeResolverImpl">
@@ -43,7 +43,7 @@
 	<!-- java实体类路径 -->
     <javaModelGenerator targetPackage="com.entity" targetProject="src/main/java" >
       <property name="enableSubPackages" value="true" />
-      <property name="trimStrings" value="true" />
+      <property name="trimStrings" value="false" />
     </javaModelGenerator>
     
 	<!-- sqlmap xml -->
@@ -57,7 +57,7 @@
     </javaClientGenerator>
 
 	<!-- 要逆向生成Dao的所有表 -->
-    <table schema="" tableName="serv_mate_dict" domainObjectName="ServMateDict" enableCountByExample="false" enableSelectByExample="false"
+    <table schema="" tableName="serv_hosp_dict" domainObjectName="ServHospDict" enableCountByExample="false" enableSelectByExample="false"
            enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
     </table>
 

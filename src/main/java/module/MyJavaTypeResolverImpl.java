@@ -39,7 +39,7 @@ public class MyJavaTypeResolverImpl implements JavaTypeResolver {
         this.typeMap.put(2011, new MyJavaTypeResolverImpl.JdbcTypeInformation("NCLOB", new FullyQualifiedJavaType(String.class.getName())));
         this.typeMap.put(-9, new MyJavaTypeResolverImpl.JdbcTypeInformation("NVARCHAR", new FullyQualifiedJavaType(String.class.getName())));
         this.typeMap.put(0, new MyJavaTypeResolverImpl.JdbcTypeInformation("NULL", new FullyQualifiedJavaType(Object.class.getName())));
-        this.typeMap.put(1111, new MyJavaTypeResolverImpl.JdbcTypeInformation("OTHER", new FullyQualifiedJavaType(Object.class.getName())));
+        this.typeMap.put(1111, new MyJavaTypeResolverImpl.JdbcTypeInformation("OTHER", new FullyQualifiedJavaType(String.class.getName())));
         this.typeMap.put(7, new MyJavaTypeResolverImpl.JdbcTypeInformation("REAL", new FullyQualifiedJavaType(Float.class.getName())));
         this.typeMap.put(2006, new MyJavaTypeResolverImpl.JdbcTypeInformation("REF", new FullyQualifiedJavaType(Object.class.getName())));
         this.typeMap.put(5, new MyJavaTypeResolverImpl.JdbcTypeInformation("SMALLINT", new FullyQualifiedJavaType(Integer.class.getName())));
