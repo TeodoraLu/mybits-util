@@ -71,7 +71,10 @@ public class MyJavaTypeResolverImpl implements JavaTypeResolver {
                         } else {
                             answer = new FullyQualifiedJavaType(Integer.class.getName());
                         }
-                    } else {
+                    }else if(introspectedColumn.getScale() <= 0 && introspectedColumn.getLength() <= 20 && introspectedColumn.getLength()>18 && !this.forceBigDecimals){
+                        answer = new FullyQualifiedJavaType(Long.class.getName());
+                    }
+                    else {
                         answer = new FullyQualifiedJavaType(BigDecimal.class.getName());
                     }
                     break;

@@ -19,21 +19,21 @@
             <property name="suppressAllComments" value="true" />
     </commentGenerator>-->
         
-    <!--<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"-->
-        <!--connectionURL="jdbc:sqlserver://10.10.231.31:1433;database=OES"-->
-        <!--userId="sa "-->
-        <!--password="123456">-->
-        <!---->
-        <!--<property name="remarksReporting" value="true"/>-->
-    <!--</jdbcConnection>-->
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        connectionURL="jdbc:sqlserver://10.10.231.31:1433;database=OES"
+        userId="sa "
+        password="123456">
 
-    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                    connectionURL="jdbc:oracle:thin:@//10.10.231.31:1521/XE"
-                    userId="OES510_DEV190102 "
-                    password="123456">
-
-      <property name="remarksReporting" value="true"/>
+        <property name="remarksReporting" value="true"/>
     </jdbcConnection>
+
+    <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"-->
+                    <!--connectionURL="jdbc:oracle:thin:@//10.10.231.31:1521/XE"-->
+                    <!--userId="OES510_DEV190102 "-->
+                    <!--password="123456">-->
+
+      <!--<property name="remarksReporting" value="true"/>-->
+    <!--</jdbcConnection>-->
 
 
     <javaTypeResolver type="module.MyJavaTypeResolverImpl">
@@ -57,7 +57,7 @@
     </javaClientGenerator>
 
 	<!-- 要逆向生成Dao的所有表 -->
-    <table schema="" tableName="sys_mate_dict" domainObjectName="SysMateDict" enableCountByExample="false" enableSelectByExample="false"
+    <table schema="" tableName="serv_mate_dict" domainObjectName="ServMateDict" enableCountByExample="false" enableSelectByExample="false"
            enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
     </table>
 
