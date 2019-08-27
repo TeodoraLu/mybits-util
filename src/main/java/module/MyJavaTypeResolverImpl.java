@@ -14,7 +14,7 @@ public class MyJavaTypeResolverImpl implements JavaTypeResolver {
     protected Properties properties = new Properties();
     protected Context context;
     protected boolean forceBigDecimals;
-    protected Map<Integer, MyJavaTypeResolverImpl.JdbcTypeInformation> typeMap = new HashMap();
+    protected Map<Integer, JdbcTypeInformation> typeMap = new HashMap();
 
     public MyJavaTypeResolverImpl() {
         this.typeMap.put(2003, new MyJavaTypeResolverImpl.JdbcTypeInformation("ARRAY", new FullyQualifiedJavaType(Object.class.getName())));

@@ -13,8 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-import static org.mybatis.generator.internal.util.StringUtility.isTrue;
-
 /**
  * @author luyang1 2019-01-11
  * mybits  自定义注释
