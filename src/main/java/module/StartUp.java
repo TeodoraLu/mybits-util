@@ -15,6 +15,11 @@ import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
 public class StartUp {
+    /**
+     * 根据数据库生成mapper
+     * @param args
+     * @throws URISyntaxException
+     */
 	public static void main(String[] args) throws URISyntaxException {
         try {
         	
